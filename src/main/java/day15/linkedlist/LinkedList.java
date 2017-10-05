@@ -3,7 +3,6 @@ package day15.linkedlist;
 import util.Node;
 
 /**
- *
  * @author Shashi Bhushan
  */
 public class LinkedList {
@@ -19,12 +18,12 @@ public class LinkedList {
 
     // get
     public int get(int index) {
-        if(index <= 0 || this.size < index) {
+        if (index <= 0 || this.size < index) {
             return -1;
         }
 
         Node current = this.head;
-        while(index-- > 1) {
+        while (index-- > 1) {
             current = current.getNext();
         }
 
@@ -35,7 +34,7 @@ public class LinkedList {
     public void add(int data) {
         Node current = this.head;
 
-        while(current.getNext() != null) {
+        while (current.getNext() != null) {
             current = current.getNext();
         }
 
@@ -57,11 +56,13 @@ public class LinkedList {
     public void remove() {
         Node current = this.head;
 
-        while(current != null && current.getNext() != null && current.getNext().getNext() != null) {
+        while (current != null && current.getNext() != null && current.getNext().getNext() != null) {
             current = current.getNext();
         }
 
-        current.setNext(null);
-        size--;
+        if (current != null) {
+            current.setNext(null);
+            size--;
+        }
     }
 }
