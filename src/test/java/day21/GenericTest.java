@@ -36,4 +36,18 @@ public class GenericTest {
 
         assert(typeTwo.getType() == "java.lang.String");
     }
+
+    @Test
+    public void compareStrings() {
+        String greater = GenericCompare.findMax("Shashi", "Bhushan");
+
+        assert(greater.equals("Shashi"));
+    }
+
+    @Test
+    public void compareNumbers() {
+        Integer greater = GenericCompare.findMax(0, 1);
+
+        assert(greater.equals(1));
+    }
 }
