@@ -1,0 +1,6 @@
+/**
+ * Generics
+ */
+
+package day21;
+
